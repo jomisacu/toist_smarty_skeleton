@@ -1,0 +1,45 @@
+{
+  "sections": [
+    {
+      "name": "A descriptive name for a 'section' detail template ",
+      "file": "index_section.tpl"
+    }
+  ],
+
+  "pages": [
+    {
+      "name": "A descriptive name for a 'page' detail template",
+      "file": "index_page.tpl"
+    }
+  ],
+
+  "contents": [
+    {
+      "name": "A descriptive name for a 'content' detail template",
+      "file": "index_content.tpl"
+    }
+  ],
+
+  "previews": [
+    {
+      "file": "previews/thumb.jpg",
+      "title": "The thumb of theme",
+      "description": "This is the thumb that will be used on lists"
+    },
+    {
+      "file": "previews/home.jpg",
+      "title": "Home",
+      "description": "This is the home preview"
+    },
+    {
+      "file": "previews/page.jpg",
+      "title": "Page",
+      "description": "This is the page preview"
+    },
+    {
+      "file": "previews/section.jpg",
+      "title": "Section",
+      "description": "This is the section preview"
+    }
+  ]
+}

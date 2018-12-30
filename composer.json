@@ -1,0 +1,23 @@
+{
+    "name": "toist/smarty_skeleton",
+    "description": "A basic theme developed with smarty to be extended by designers",
+    "type": "metapackage",
+    "license": "opensource",
+    "authors": [
+        {
+            "name": "J",
+            "email": "j@toist.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "smarty/smarty": "3.1.*",
+        "symfony/http-foundation": "4.2.x-dev",
+        ""
+    },
+    "autoload": {
+        "psr-4": {
+            "Toist\\": "includes/class"
+        }
+    }
+}
