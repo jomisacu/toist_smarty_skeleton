@@ -37,6 +37,11 @@ class ContentList extends TemplateObject implements \Iterator
         // reduce the list to the current page
         return array_slice($this->contents, ($page - 1) * $pageSize, $pageSize);
     }
+	
+	public function getTitle () {
+		
+		return "the title for '" . $this->urlKeywords . "' list";
+    }
     
     
     
@@ -63,6 +68,11 @@ class ContentList extends TemplateObject implements \Iterator
         }
         
         return $pages;
+    }
+	
+	public function getPagesCount () {
+		
+		return count($this->getPages());
     }
     
     
