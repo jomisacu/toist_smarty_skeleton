@@ -5,8 +5,8 @@ namespace Toist;
 class Lang extends TemplateObject
 {
     protected $phrases                = null;
-    protected $pendingPhrasesFilePath = __DIR__.'/../lang.pending.xml';
-    protected $phrasesFilePath        = __DIR__.'/../templates/lang.xml';
+    protected $pendingPhrasesFilePath = __DIR__.'/../../lang.pending.xml';
+    protected $phrasesFilePath        = __DIR__.'/../../templates/lang.xml';
     
     
     
@@ -44,8 +44,9 @@ class Lang extends TemplateObject
     {
         $filename    = $this->pendingPhrasesFilePath;
         $fileContent = '';
+        $toAdd = '';
         
-        if ( ! file_exists($filename)) {
+        if (file_exists($filename)) {
             $fileContent = file_get_contents($filename);
             $toAdd       = "\n<phrase key=\"{$key}\"><![CDATA[{$key}]]></phrase>";
             
