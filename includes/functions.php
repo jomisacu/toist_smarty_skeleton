@@ -40,7 +40,6 @@ function toist_getContentLists($fromSection = false)
     // create all contents under the "latest" list
     foreach (range(1, 500) as $index) {
         
-        $publicationDate    = date('Y-m-d H:i:s');
         $publicationDateInt = time();
         
         $image1 = ($index % 6) + 1;
@@ -48,25 +47,19 @@ function toist_getContentLists($fromSection = false)
         $image3 = ($index % 6) + 1;
         
         $contents['latest'][$index] = [
-            'thumb_url' => '/static/images/'.($index + 1000),
-            'publication_date' => $publicationDate,
-            'publication_date_int' => $publicationDateInt,
-            
+            'publication_date' => $publicationDateInt,
             'id' => $index,
             'title' => 'The title for the content #'.$index,
             'description' => 'This is the description for the content #'.$index,
-            'context_id' => 1,
             'url_title' => 'the-title-for-content-'.$index,
             'author_id' => 1,
             'published' => 1,
             'ready' => 1,
-            'date_to_publish' => $publicationDate,
-            'created_at' => null,
-            'image_square_id' => null,
-            'image_wide_id' => null,
-            'plain_text' => null,
+            'created_at' => $publicationDateInt - (3600 * 5),
+            'image_square_id' => $image1,
+            'image_wide_id' => $image2,
+            'plain_text' => 'The plain text of content (all blocks and galleries)',
             'allow_comments' => 1,
-            'blocks_serialized' => '',
             'blocks' => [
                 [
                     'type' => 'title',
@@ -94,7 +87,6 @@ function toist_getContentLists($fromSection = false)
             'body' => '',
             'keyword' => '',
             'views_count' => rand(1, 100) % 25 == 0 ? rand(1200, 1500) : $index,
-            'is_template' => null,
             'source' => 'http://www.example.com/the-permanent-url-where-original-content-was-published/',
             'via' => 'algun-valor-valido-para-via',
         ];
