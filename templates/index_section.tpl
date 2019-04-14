@@ -30,7 +30,7 @@
 	returned are reduced to contents included in the referenced section.
 	*}
 	{* get latest content from the current section *}
-	{foreach $section.contents.latest->get() as $content}
+	{foreach $section.contents.latest->get(1, 20) as $content}
 		{include "{$theme_path}/blocks/content_list_item.tpl"}
 	{/foreach}
 	{include "{$theme_path}/blocks/pagination_links.tpl" currentList=$section.contents.latest}

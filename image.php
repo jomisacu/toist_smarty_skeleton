@@ -6,18 +6,18 @@ use PHPImageWorkshop\ImageWorkshop;
 require __DIR__.'/includes/init.php';
 require __DIR__.'/includes/class/PHPImageWorkshop/ImageWorkshop.php';
 
-$id        = $request->query->getInt('id');
+$id        = $request->query->getInt('image');
 $width     = $request->query->getInt('w');
 $height    = $request->query->getInt('h');
-$maxWidth  = $request->query->getInt('mw');
-$maxHeight = $request->query->getInt('mh');
+$maxWidth  = $request->query->getInt('max-w');
+$maxHeight = $request->query->getInt('max-h');
 
 $cachedFilepath = _getImageCachedFilePath([
-    'id' => $id,
+    'image' => $id,
     'w' => $width,
     'h' => $height,
-    'mw' => $maxWidth,
-    'mh' => $maxHeight,
+    'max-w' => $maxWidth,
+    'max-h' => $maxHeight,
 ]);
 
 if (!file_exists($cachedFilepath)) {

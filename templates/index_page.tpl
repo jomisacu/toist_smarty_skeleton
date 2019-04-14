@@ -1,4 +1,4 @@
-{extends file="_layout.tpl"}
+{extends file="{$theme_path}/_layout.tpl"}
 {block name="body"}
 	<div style="display: grid;grid-template-columns: auto auto">
 	<section>

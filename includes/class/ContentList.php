@@ -5,29 +5,23 @@ namespace Toist;
 
 class ContentList extends TemplateObject implements \Iterator
 {
-    public $urlKeywords = '';
-    public $paginationSegmentTemplate;
+    protected $urlKeywords = '';
     public $contents    = [];
     public $pages       = [];
     public $pageSize    = 20;
-    public $page        = 1;
     
     
     
     public function __construct(
         $urlKeywords,
-        $paginationSegmentTemplate,
         $pageSize,
-        $contents,
-        $page = 1
+        $contents
     ) {
-        $this->urlKeywords               = $urlKeywords;
-        $this->paginationSegmentTemplate = $paginationSegmentTemplate;
+        $this->urlKeywords = $urlKeywords;
         
         $this->contents = $contents;
         $this->pageSize = $pageSize;
         $this->pages    = $this->getPages();
-        $this->page     = $page;
     }
     
     
@@ -45,7 +39,7 @@ class ContentList extends TemplateObject implements \Iterator
     
     
     
-    public function getPermanentUrl(int $page = 1)
+    public function getPermanentUrl(int $page = null)
     {
         $page = (int)$page ?: 1;
         

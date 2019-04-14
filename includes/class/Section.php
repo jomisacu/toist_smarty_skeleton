@@ -15,7 +15,7 @@ class Section extends TemplateObject
         $this->contents = [];
     
         foreach ($contentLists as $contentListKey => $contents) {
-            $this->contents[$contentListKey] = new ContentList('', '/page/{page}/', $pageSize, $contents);
+            $this->contents[$contentListKey] = new ContentList('', $pageSize, $contents);
         }
     }
 }
