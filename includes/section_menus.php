@@ -11,4 +11,4 @@ $menuItems = [
     new MenuItem('Pagina (desde el menu de la seccion)', 'page.php'),
 ];
 
-$menus['main_menu'] = new Toist\Menu($menuItems);
+$menus['main_menu'] = new Toist\Menu('menu', 'main_menu', $menuItems);

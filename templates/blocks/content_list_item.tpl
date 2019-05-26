@@ -1,6 +1,6 @@
 <article>
 	<figure>
-		<img src="{$url->image_url($content.image_square_id, 200, 100)}" alt="{$content.title}">
+		<img src="{$url->image_url($content.image_square_id, ['w' => 200, 'h' => 100])}" alt="{$content.title}">
 		<figcaption>{$content.title}</figcaption>
 	</figure>
 	<header>

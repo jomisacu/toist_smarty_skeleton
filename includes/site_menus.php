@@ -11,4 +11,4 @@ $menuItems = [
     new MenuItem('Pagina', 'page.php'),
 ];
 
-$menus['main_menu'] = new Toist\Menu($menuItems);
+$menus['main_menu'] = new Toist\Menu('site-menus', 'main menu', $menuItems);

@@ -34,9 +34,7 @@ abstract class TemplateObject implements \ArrayAccess {
      */
     public function offsetGet($offset)
     {
-        if (property_exists($this, $offset)) {
-            return $this->$offset;
-        }
+        return $this->$offset;
     }
     
     
