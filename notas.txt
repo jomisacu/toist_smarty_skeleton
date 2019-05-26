@@ -1,0 +1,18 @@
+Notas sobre los elementos necesarios en el template
+
+
+menus
+listas de contenidos
+buscadores
+helpers
+	- url
+	- date
+	- ads
+
+
+
+
+* notas aparte
+
+apis
+

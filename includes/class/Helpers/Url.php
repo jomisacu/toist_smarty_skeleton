@@ -4,26 +4,15 @@ namespace Toist\Helpers;
 
 class Url
 {
-    public function image_url($imageId, $width = null, $height = null, $maxWidth = null, $maxHeight = null)
+    public function image_url($key, array $options = [
+        'w' => null,
+        'h' => null,
+        'fit' => 'crop',
+    ])
     {
-    	$aux = [];
-    	
-        if (is_array($imageId)) {
-            $values       = $imageId;
-            $valueIndexes = [ 'image', 'w', 'h', 'max-w', 'max-h' ];
+        $options['key'] = $key;
         
-            foreach ($valueIndexes as $index => $param) {
-                $aux[ $param ] = $values[ $index ] ?? null;
-            }
-        } else {
-            $aux['image'] = $imageId;
-            $aux['w']     = $width;
-            $aux['h']     = $height;
-            $aux['max-w'] = $maxWidth;
-            $aux['max-h'] = $maxHeight;
-        }
-    	
-        return 'image.php?'.http_build_query($aux);
+        return 'image.php?'.http_build_query($options);
     }
     
     

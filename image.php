@@ -6,14 +6,25 @@ use PHPImageWorkshop\ImageWorkshop;
 require __DIR__.'/includes/init.php';
 require __DIR__.'/includes/class/PHPImageWorkshop/ImageWorkshop.php';
 
-$id        = $request->query->getInt('image');
+$id        = $request->query->getInt('key');
 $width     = $request->query->getInt('w');
 $height    = $request->query->getInt('h');
-$maxWidth  = $request->query->getInt('max-w');
-$maxHeight = $request->query->getInt('max-h');
+$maxWidth  = $request->query->getInt('max_width') ?: ($request->query->getInt('max-w') ?: $request->query->getInt('mw'));
+$maxHeight = $request->query->getInt('max_height') ?: ($request->query->getInt('max-h') ?: $request->query->getInt('mh'));
+$fit       = $request->query->get('fit', 'crop');
+
+if ($maxWidth) {
+    $width = $maxWidth;
+    $fit = 'clip';
+}
+
+if ($maxHeight) {
+    $width = $maxHeight;
+    $fit = 'clip';
+}
 
 $cachedFilepath = _getImageCachedFilePath([
-    'image' => $id,
+    'key' => $id,
     'w' => $width,
     'h' => $height,
     'max-w' => $maxWidth,
