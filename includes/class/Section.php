@@ -4,14 +4,14 @@ namespace Toist;
 
 class Section extends TemplateObject
 {
-    public $title = 'Section of my site in toist.net';
-    public $domain = null;
-    public $path = '/';
-    public $is_default = true;
-    public $permanent_url = '/';
-    public $url_permanent = '/';
-    public $menus;
-    public $contents;
+    protected $title = 'Section of my site in toist.net';
+    protected $domain = null;
+    protected $path = '/';
+    protected $is_default = true;
+    protected $permanent_url = '/';
+    protected $url_permanent = '/';
+    protected $menus;
+    protected $contents;
     
     
     

@@ -5,11 +5,11 @@ namespace Toist;
 
 class MenuItem extends TemplateObject
 {
-    public $caption = 'Default menu item text';
-    public $text = 'Default menu item text';
-    public $href = 'https://www.toist.net';
-    public $css_class = 'menu-item';
-    public $target = '_blank';
+    protected $caption = 'Default menu item text';
+    protected $text = 'Default menu item text';
+    protected $href = 'https://www.toist.net';
+    protected $css_class = 'menu-item';
+    protected $target = '_blank';
     
     public function __construct (
         $caption = null,

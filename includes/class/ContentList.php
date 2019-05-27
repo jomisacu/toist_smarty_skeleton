@@ -6,7 +6,7 @@ namespace Toist;
 class ContentList
 {
     protected $urlKeywords = '';
-    public $contents    = [];
+    protected $contents    = [];
     
     
     public function __construct(

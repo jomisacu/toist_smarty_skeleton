@@ -4,7 +4,7 @@ namespace Toist\Helpers;
 
 class Date
 {
-    public function format($date, $format = null)
+    public function format($format, $date = null)
     {
     	$replace = [
     		'%year' => '%Y',
@@ -35,11 +35,16 @@ class Date
     		$format = '%c'; // preferred stamp
 		}
     	
-        $dateInt = $date;
-        if ( ! is_int($dateInt)) {
-            $dateInt = strtotime($date);
+        $dateInt = time();
+    	
+    	if (isset($date)) {
+            if ( ! is_int($dateInt)) {
+                $dateInt = strtotime($date);
+            } else {
+                $dateInt = $date;
+            }
         }
-        
+    	
         return strftime($format, $dateInt);
     }
 }
