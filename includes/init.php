@@ -4,6 +4,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 require __DIR__ . '/functions.php';
 
+Symfony\Component\Debug\Debug::enable();
+Symfony\Component\Debug\ErrorHandler::register();
+
 $request = Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 define('CURRENT_PAGE', $request->get('page', 1));
