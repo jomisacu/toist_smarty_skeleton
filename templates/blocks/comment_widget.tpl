@@ -1,5 +1,5 @@
 <script>
-
+    {if $thread_identifier && $thread_container_id}
     // TOIST CONFIGURATION
     var toist_site_id = {$site.id};
     var toist_thread_identifier = '{$thread_identifier}';
@@ -11,5 +11,5 @@
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
-
+    {/if}
 </script>
