@@ -70,7 +70,7 @@ function toist_getContentLists($fromSection = false)
                 [
                     'type' => 'gallery',
                     'images' => toist_buildBlockImages($index),
-                    'display_option' => [
+                    'display_options' => [
                         'slideshow' => 1,
                         'float_left' => false,
                         'float_right' => false,
