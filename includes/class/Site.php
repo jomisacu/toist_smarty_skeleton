@@ -5,21 +5,19 @@ namespace Toist;
 
 class Site extends TemplateObject
 {
-    protected $language        = [
-        'iso_code' => 'en-us',
-        'name' => 'english',
-    ];
-    protected $name            = 'Site in toist.net';
-    protected $title           = 'My site in toist.net';
-    protected $logo            = 1;
-    protected $site_title      = 'This is my site in toist.net';
-    protected $company_email   = 'no-reply@toist.net';
-    protected $company_name    = 'MySiteInToist';
-    protected $company_phone   = '+19999999999';
-    protected $company_address = 'toist st #1';
-    protected $section         = null;
-    protected $menus           = [];
-    protected $contents        = [];
+    protected $language_iso_code = 'en-us';
+    protected $language_name     = 'english';
+    protected $name              = 'Site in toist.net';
+    protected $title             = 'My site in toist.net';
+    protected $logo              = 1;
+    protected $site_title        = 'This is my site in toist.net';
+    protected $company_email     = 'no-reply@toist.net';
+    protected $company_name      = 'MySiteInToist';
+    protected $company_phone     = '+19999999999';
+    protected $company_address   = 'toist st #1';
+    protected $section           = null;
+    protected $menus             = [];
+    protected $contents          = [];
     
     public function __construct (
         $name = null,
