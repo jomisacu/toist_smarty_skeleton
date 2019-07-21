@@ -4,12 +4,22 @@ namespace Toist\Helpers;
 
 class Url
 {
-    public function image_url($key, array $options = [
-        'w' => null,
-        'h' => null,
-        'fit' => 'crop',
-    ])
+    public function image_url ($key, $options = null, $height = null, $fit = null)
     {
+        if (is_int($options)) {
+            $options = [
+                'w' => $options,
+            ];
+        
+            if (isset($height) && (int)$height) {
+                $options['h'] = (int)$height;
+            }
+        
+            if (isset($fit)) {
+                $options['fit'] = $fit;
+            }
+        }
+    
         $options['key'] = $key;
         
         return 'image.php?'.http_build_query($options);
