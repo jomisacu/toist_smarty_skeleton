@@ -1,5 +1,5 @@
 <script>
-    {if $thread_identifier && $thread_container_id}
+    {if isset($thread_identifier) && isset($thread_container_id)}
     // TOIST CONFIGURATION
     var toist_site_id = {$site.id};
     var toist_thread_identifier = '{$thread_identifier}';
