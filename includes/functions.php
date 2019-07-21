@@ -30,7 +30,17 @@ function toist_buildBlockImages ($index, $limit = null) {
     return $images;
 }
 
-function toist_getContentLists($fromSection = false)
+/**
+ * Creates content lists with example items
+ * If your design uses custom content lists
+ * you can provide it through the $contentListKeys
+ * array
+ *
+ * @param array $contentListKeys
+ *
+ * @return array
+ */
+function toist_getContentLists($contentListKeys = [])
 {
     $contents = [
         'latest' => [],
@@ -49,7 +59,8 @@ function toist_getContentLists($fromSection = false)
         $image3 = ($index % 6) + 1;
         
         $contents['latest'][$index] = [
-            'publication_date' => $publicationDateInt,
+            'publication_date' => date('Y-m-d H:i:s', $publicationDateInt),
+            'publication_date_int' => $publicationDateInt,
             'id' => $index,
             'title' => 'The title for the content #'.$index,
             'description' => 'This is the description for the content #'.$index,
@@ -57,7 +68,8 @@ function toist_getContentLists($fromSection = false)
             'author_id' => 1,
             'published' => 1,
             'ready' => 1,
-            'created_at' => $publicationDateInt - (3600 * 5),
+            'created_at' => date('Y-m-d H:i:s', $publicationDateInt - (3600 * 5)),
+            'created_at_int' => $publicationDateInt - (3600 * 5),
             'image_square_id' => $image1,
             'image_wide_id' => $image2,
             'plain_text' => 'The plain text of content (all blocks and galleries)',
@@ -84,7 +96,7 @@ function toist_getContentLists($fromSection = false)
             'is_page' => false,
             'site_id' => 1,
             'permanent_url' => 'content.php?id='.$index,
-            'comments_count' => $index,
+            'comments_count' => rand(0, 127),
             'featured' => rand(1, 100) % 5 == 0,
             'body' => '',
             'keyword' => '',
@@ -92,6 +104,12 @@ function toist_getContentLists($fromSection = false)
             'source' => 'http://www.example.com/the-permanent-url-where-original-content-was-published/',
             'via' => 'algun-valor-valido-para-via',
         ];
+    }
+    
+    if ($contentListKeys) {
+        foreach ($contentListKeys as $contentListKey) {
+            $contents[$contentListKey] = $contents['latest'];
+        }
     }
     
     foreach ($contents['latest'] as $index => $content) {
