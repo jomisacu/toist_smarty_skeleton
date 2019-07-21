@@ -19,9 +19,11 @@ function toist_buildBlockImages ($index, $limit = null) {
         $imageId = $imageIds[rand(0, 5)];
         $images[] = [
             'title' => 'The title for the image ' . $i . ' in the gallery ' . $index,
+            'href' => 'the href for the image',
             'link' => 'the href for the image',
             'description' => 'the description for the image',
             'id' => $imageId,
+            'key' => $imageId,
         ];
     }
     
