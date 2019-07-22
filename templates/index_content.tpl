@@ -1,4 +1,20 @@
 {extends file="_layout.tpl"}
 {block name="body"}
-	{include "{$theme_path}/blocks/content_detail.tpl"}
+	<article>
+		<header>
+			<h1>{$content.title}</h1>
+		</header>
+		<section>
+			{include "blocks/content_blocks.tpl" content=$content}
+		</section>
+		<div id="comments"></div>
+	</article>
+	{$threadIdentifier = "content-$content.iddd"}
+	{include "blocks/comment_widget.tpl"}
+	<script>
+        $(function () {
+            // sets slideshows
+            // anything etc etc
+        });
+	</script>
 {/block}
