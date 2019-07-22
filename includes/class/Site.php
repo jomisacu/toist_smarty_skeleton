@@ -5,6 +5,7 @@ namespace Toist;
 
 class Site extends TemplateObject
 {
+    protected $id                = 1;
     protected $language_iso_code = 'en-us';
     protected $language_name     = 'english';
     protected $name              = 'Site in toist.net';
@@ -31,7 +32,8 @@ class Site extends TemplateObject
         $section = null,
         $menus = null,
         $contents = null
-    ) {
+    )
+    {
         if (isset($name)) {
             $this->name = $name;
         }
