@@ -12,6 +12,6 @@
         (d.head || d.body).appendChild(s);
     })();
     {else}
-        alert("Wrong thread identifier");
+    document.getElementById(toist_thread_container_id).innerHTML = '<h1>YOUR COMMENTS APPEARS HERE</h1>';
     {/if}
 </script>
