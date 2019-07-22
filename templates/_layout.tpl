@@ -4,7 +4,7 @@ Feel free to do anything you want. Add files and folders as
 you want.
 *}
 <!doctype html>
-<html lang="{$site.lang_iso_code2}">
+<html lang="{$site.language_iso_code}">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
