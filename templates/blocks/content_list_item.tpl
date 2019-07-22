@@ -4,7 +4,7 @@
 		<figcaption>{$content.title}</figcaption>
 	</figure>
 	<header>
-		<time datetime="{$content.publication_date}">{$date->format($content.publication_date_int, '%d/%m/%Y')}</time>
+		<time datetime="{$date->format('%Y-%m-%d %H:%minute:%second', $content.publication_date_int)}">{$date->format('%d/%m/%Y', $content.publication_date_int)}</time>
 		<h1><a href="{$content.permanent_url}">{$content.title}</a></h1>
 	</header>
 	<section>
