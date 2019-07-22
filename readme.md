@@ -22,7 +22,7 @@ Guarda el titulo de la seccion. A continuacion, se muestra como establecer un ti
 Sirve para acceder al dominio en que esta definida la seccion actual. Por ejemplo, el sitio web example.com podria definir dos secciones "juegos" y "peliculas" y desplegar estas bajo sub dominios diferentes, juegos.example.com y peliculas.example.com respectivamente. 
 
 #### section.path
-La porcion de la url que sigue al dominio es el path de la url actual (la que se encuentra en la barra de direcciones de nuestro navegador), incluyendo la barra del inicio. Por ejemplo, en la url https://example.com/una/ruta/en/el/sitio/ el path, hace referencia a "/una/ruta/en/el/sitio/".
+La porcion de la url que sigue al dominio es el path de la url actual (la que se encuentra en la barra de direcciones de nuestro navegador), incluyendo la barra (/) del inicio. Por ejemplo, en la url https://example.com/una/ruta/en/el/sitio/ el path, hace referencia a "/una/ruta/en/el/sitio/".
  
 #### section.is_default
 Nos sirve para saber si la seccion actual es la predeterminada.
@@ -58,7 +58,7 @@ section.contents nos sirve para acceder a los articulos de nuestro sitio. Expone
     		<figcaption>{$content.title}</figcaption>
     	</figure>
     	<header>
-    		<time datetime="{$content.publication_date}">{$date->format($content.publication_date_int, '%d/%m/%Y')}</time>
+    		<time datetime="{$content.publication_date}">{$date->format('%d/%m/%Y', $content.publication_date_int)}</time>
     		<h1><a href="{$content.permanent_url}">{$content.title}</a></h1>
     	</header>
     	<section>
@@ -78,7 +78,7 @@ Nos sirven para acceder al numero de pagina actual. Es util cuando estamos mostr
 Expone la lista de contenidos donde estan agrupados los articulos que se estan desplegando en la pagina.
 
 ## site
-Expone los datos del sitio web. A traves de sta variable tenemos acceso a los siguientes datos: language.iso_code, language.name, name, title, logo, site_title, company_email, company_name, company_phone, company_address, section, menus, contents.
+Expone los datos del sitio web. A traves de sta variable tenemos acceso a los siguientes datos: language_iso_code, language_name, name, title, logo, site_title, company_email, company_name, company_phone, company_address, section, menus, contents.
 
 ## lang
 La variable lang nos sirve para traducir el texto del tema al idioma de nuestro sitio.
@@ -131,25 +131,25 @@ Lo usamos para formatear fechas. Una lista completa de las opciones disponibles 
 * %year equivale a %Y
 * %year_short => %Y
 * %month equivale a %m
-* month_short equivale a %m
-* month_name equivale a %B
-* month_name_short equivale a %b
-* day equivale a %d
-* day_short equivale a %#d (windows)
-* day_short equivale a %e
-* day_name equivale a %A
-* day_name_short equivale a %a
-* hour_24 equivale a %H
-* hour equivale a %I
-* hour_12 equivale a %I
-* minute equivale a %M
-* second equivale a %S
+* %month_short equivale a %m
+* %month_name equivale a %B
+* %month_name_short equivale a %b
+* %day equivale a %d
+* %day_short equivale a %#d (windows)
+* %day_short equivale a %e
+* %day_name equivale a %A
+* %day_name_short equivale a %a
+* %hour_24 equivale a %H
+* %hour equivale a %I
+* %hour_12 equivale a %I
+* %minute equivale a %M
+* %second equivale a %S
 
 Veamos un ejemplo:
 ```smarty
 ...
 <footer>
-	<small>Writed by John Smith at {$date->format($content.publication_date_int, '%d/%m/%Y')}</small>
+	<small>Writed by John Smith at {$date->format('%d/%m/%Y', $content.publication_date_int)}</small>
 </footer>
 ...
 
