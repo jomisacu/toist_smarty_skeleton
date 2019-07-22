@@ -9,7 +9,6 @@
 		</section>
 		<div id="comments"></div>
 	</article>
-	{$threadIdentifier = "content-$content.iddd"}
 	{include "blocks/comment_widget.tpl"}
 	<script>
         $(function () {
