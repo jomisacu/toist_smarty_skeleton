@@ -46,9 +46,9 @@ you want.
 			*}
 			{* get latest contents from all site contents *}
 			{foreach $section.contents.latest as $content}
-				{include "{$theme_path}/blocks/content_list_item.tpl"}
+				{include "blocks/content_list_item.tpl"}
 			{/foreach}
-			{include "{$theme_path}/blocks/pagination_links.tpl" currentList=$section.contents.latest}
+			{include "blocks/pagination_links.tpl" currentList=$section.contents.latest}
 		{/block}
 	</div>
 {block name="scripts"}
