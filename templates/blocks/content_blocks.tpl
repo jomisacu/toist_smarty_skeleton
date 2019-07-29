@@ -4,22 +4,23 @@
 			{$block.text}
 		</div>
 	{elseif $block.type == 'gallery'}
-		<div class="gallery{foreach $block.display_options as $display_option} {$display_option}{/foreach}">
+		<div class="{if in_array("slideshow", $block.display_options)}fotorama{/if} gallery{foreach $block.display_options as $display_option} {$display_option}{/foreach}" {if in_array("slideshow", $block.display_options)}data-nav="thumbs"{/if} data-width="100%" data-height="">
+
 			{foreach $block.images as $image}
-				{if $image.link}
-					<a href="{$image.link}">
-				{/if}
-				<figure>
-					<img src="{$url->image_url($image.id, 600,  400)}" alt="{if $image.title}{$image.title}{else}{$content.title}{/if}">
-					{if $image.description}
-						<figcaption>
-							{$image.description}
-						</figcaption>
-					{/if}
-				</figure>
-				{if $image.link}
+				<div data-img="{$url->image_url($image.id, 600,  400)}">
+					{if $image.link}
+					<a href="{$image.link}" data-href="{$image.link}">
+						<div class="overlay">
+							{if $image.title}
+							<h1>{$image.title|escape}</h1>
+							{/if}
+							{if $image.description}
+							<p>{$image.description}</p>
+							{/if}
+						</div>
 					</a>
-				{/if}
+					{/if}
+				</div>
 			{/foreach}
 		</div>
 	{elseif $block.type == 'title'}

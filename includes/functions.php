@@ -83,9 +83,9 @@ function toist_getContentLists($contentListKeys = [])
                     'type' => 'gallery',
                     'images' => toist_buildBlockImages($index),
                     'display_options' => [
-                        'slideshow' => 1,
-                        'float_left' => false,
-                        'float_right' => false,
+                        'slideshow',
+                        //'float_left',
+                        //'float_right',
                     ]
                 ],
                 [
