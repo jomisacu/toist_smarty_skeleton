@@ -10,7 +10,7 @@ you want.
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>{block name="page_title"}{$lang.default_page_title}{/block}</title>
+	<title>{block name="page_title"}{"Default page title"|translate}{/block}</title>
 	<link rel="stylesheet" href="{$url->css_url('css/style.css')}">
 	{block name="heders"}
 		<!-- you can use this block to add styles, scripts and/or meta data in descendant templates -->
@@ -41,11 +41,11 @@ you want.
 			from the "site" varible or from the "section" variable.
 			When you access via "site" variable to any list you are
 			loading contents for all sections on the site. On the other
-			hand, when a list is used from the context, the contents
-			returned are reduced to contents included in the referenced context.
+			hand, when a list is used from the section, the contents
+			returned are reduced to contents included in the referenced section.
 			*}
 			{* get latest contents from all site contents *}
-			{foreach $section.contents.latest as $content}
+			{foreach $section.contents.latest->get(1, 20) as $content}
 				{include "blocks/content_list_item.tpl"}
 			{/foreach}
 			{include "blocks/pagination_links.tpl" currentList=$section.contents.latest}
