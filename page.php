@@ -9,7 +9,7 @@ $contentid = $request->query->getInt('id', 1);
 
 $content = toist_getContentLists()['latest'][$contentid];
 
-$section = new Toist\Section($menus, toist_getContentLists(), 20);
+$section = new Toist\Section('Example section', null, '/', true, '/', $menus, toist_getContentLists(), 20);
 
 $smarty->assign('section', $section);
 
