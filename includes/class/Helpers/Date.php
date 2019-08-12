@@ -26,7 +26,7 @@ class Date
     	
     	// sort keys by length descending
 		uksort($replace, function($k1, $k2){
-			return strlen($k1) > strlen($k2) ? -11 : (strlen($k1) < strlen($k2) ? 1 : 0);
+			return strlen($k1) > strlen($k2) ? -1 : (strlen($k1) < strlen($k2) ? 1 : 0);
 		});
 		
     	if ($format) {
