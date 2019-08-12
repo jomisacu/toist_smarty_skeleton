@@ -4,6 +4,77 @@ Este es un skeleton para construir un tema compatible con el sitio [toist.net](h
 # Directorios
 Este paquete contiene un grupo de archivos para ayudarte a crear temas. Debes prestar atencion especial a la carpeta templates, ya que es aqui donde reside el tema que estas creando y es la carpeta cuyo contenido debes comprimir y subir en formato zip para publicar tu tema.
 
+## Archivos requeridos
+Para que un tema sea considerado como valido debe contener al menos los siguientes archivos:
+* index_page.tpl
+* index_content.tpl
+* index_section.tpl
+* index_list.tpl
+
+### index_page.tpl
+Este archivo sera usado para mostrar las páginas del sitio web. Por ejemplo, la seccion "nosotros" del sitio.
+
+### index_content.tpl
+Este archivo será usado para mostrar los artículos del sitio web.
+
+### index_section.tpl
+Este archivo se usa para mostrar las paginas de inicio de los sitios. 
+
+### index_list.tpl
+Este archivo se usa para mostrar listados de articulos. 
+
+### El archivo theme.json
+La finalidad de este archivo es definir los recursos del tema. No es estrictamente necesario, pero si queremos agregar multiples plantillas para articulos, páginas y secciones o si queremos especificar donde estan las miniaturas del tema, debemos entonces agregarlo. El aspecto de este archivo se muestra a continuación:
+
+```json
+{
+  "sections": [
+    {
+      "name": "Default home aspect",
+      "file": "index_section.tpl"
+    }
+  ],
+
+  "pages": [
+    {
+      "name": "Default page aspect",
+      "file": "index_page.tpl"
+    }
+  ],
+
+  "contents": [
+    {
+      "name": "Default article aspect",
+      "file": "index_content.tpl"
+    }
+  ],
+
+  "lists": [
+    {
+      "name": "Default list aspect",
+      "file": "index_list.tpl"
+    }
+  ],
+
+  "previews": [
+    {
+      "file": "previews/thumb.jpg",
+      "title": "The thumb",
+      "description": "This is the thumb that will be used on lists"
+    },
+    {
+      "file": "previews/home.jpg",
+      "title": "Home",
+      "description": "This is the home preview"
+    },
+    {
+      "file": "previews/page.jpg",
+      "title": "Page",
+      "description": "This is the page preview"
+    }
+  ]
+}
+```
 # Variables disponibles
 ## section
 Una seccion en un sitio web, representa un contexto. Y va a deterinar la forma en que se va a mostrar el sitio. Imagina las secciones como portadas (paginas de inicio), que pueden ser publicadas bajo urls especificas. Veamos un ejemplo. Imagina que en tu sitio web tienes varias secciones: juegos y peliculas. Puedes acceder a ellas a traves de las urls http://www.example.com/juegos/ y http://www.example.com/peliculas/ respectivamente. Al entrar en cada url, podrias ver listados de noticias diferentes, diapositivas diferentes, un diseño diferente, etc., etc.
