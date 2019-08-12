@@ -7,8 +7,8 @@ require __DIR__.'/includes/init.php';
 require __DIR__.'/includes/class/PHPImageWorkshop/ImageWorkshop.php';
 
 $id     = $request->query->getInt('key');
-$width  = $request->query->getInt('w', null);
-$height = $request->query->getInt('h', null);
+$width  = $request->query->getInt('w') ?: null;
+$height = $request->query->getInt('h') ?: null;
 $fit    = $request->query->get('fit', 'crop');
 
 $cachedFilepath = _getImageCachedFilePath([
