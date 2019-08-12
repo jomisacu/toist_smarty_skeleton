@@ -29,7 +29,7 @@
 	hand, when a list is used from the section, the contents
 	returned are reduced to contents included in the referenced section.
 	*}
-	{* get latest content from the current section *}
+	{* get latest contents from the current section *}
 	{foreach $section.contents.latest->get(1, 20) as $content}
 		{include "blocks/content_list_item.tpl"}
 	{/foreach}
