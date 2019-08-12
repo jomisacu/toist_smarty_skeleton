@@ -19,6 +19,7 @@ $smarty->setCompileDir(__DIR__ . '/../templates_c');
 $smarty->setForceCompile(true);
 
 // include helpers
+$smarty->assign('ads', new Toist\Helpers\Ads());
 $smarty->assign('url', new Toist\Helpers\Url());
 $smarty->assign('date', new Toist\Helpers\Date());
 
