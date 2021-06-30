@@ -2,7 +2,7 @@
     "name": "toist-net/smarty_skeleton",
     "description": "A basic theme developed with smarty to be extended by designers",
     "type": "metapackage",
-    "license": "opensource",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "J",
