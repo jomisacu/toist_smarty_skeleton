@@ -1,5 +1,5 @@
 {
-    "name": "toist/smarty_skeleton",
+    "name": "toist-net/smarty_skeleton",
     "description": "A basic theme developed with smarty to be extended by designers",
     "type": "metapackage",
     "license": "opensource",
