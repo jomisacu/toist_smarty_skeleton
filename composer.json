@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "smarty/smarty": "3.1.*",
+        "smarty/smarty": "^3.1.40",
         "symfony/http-foundation": "4.2.x-dev",
         "symfony/debug": "4.2.x-dev"
     },
